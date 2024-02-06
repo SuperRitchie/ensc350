@@ -1,0 +1,14 @@
+
+State Machine - |lab1|fsm:OBJ2|currState
+Name currState.H currState.C currState.T currState.I currState.R currState.rst6 currState.rst5 currState.rst4 currState.rst3 currState.rst2 currState.rst1 
+currState.rst1 0 0 0 0 0 0 0 0 0 0 0 
+currState.rst2 0 0 0 0 0 0 0 0 0 1 1 
+currState.rst3 0 0 0 0 0 0 0 0 1 0 1 
+currState.rst4 0 0 0 0 0 0 0 1 0 0 1 
+currState.rst5 0 0 0 0 0 0 1 0 0 0 1 
+currState.rst6 0 0 0 0 0 1 0 0 0 0 1 
+currState.R 0 0 0 0 1 0 0 0 0 0 1 
+currState.I 0 0 0 1 0 0 0 0 0 0 1 
+currState.T 0 0 1 0 0 0 0 0 0 0 1 
+currState.C 0 1 0 0 0 0 0 0 0 0 1 
+currState.H 1 0 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Clock:OBJ1|delay[25]'
+Slack : -207.031
+TNS   : -2635.952
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -2.277
+TNS   : -33.872
+
+Type  : Slow 1200mV 85C Model Hold 'Clock:OBJ1|delay[25]'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.533
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'Clock:OBJ1|delay[25]'
+Slack : -4.575
+TNS   : -182.345
+
+Type  : Slow 1200mV 85C Model Removal 'Clock:OBJ1|delay[25]'
+Slack : 1.286
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.410
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock:OBJ1|delay[25]'
+Slack : -1.285
+TNS   : -102.800
+
+Type  : Slow 1200mV 0C Model Setup 'Clock:OBJ1|delay[25]'
+Slack : -187.082
+TNS   : -2377.631
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.920
+TNS   : -27.371
+
+Type  : Slow 1200mV 0C Model Hold 'Clock:OBJ1|delay[25]'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.476
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'Clock:OBJ1|delay[25]'
+Slack : -4.058
+TNS   : -160.962
+
+Type  : Slow 1200mV 0C Model Removal 'Clock:OBJ1|delay[25]'
+Slack : 1.133
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.410
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock:OBJ1|delay[25]'
+Slack : -1.285
+TNS   : -102.800
+
+Type  : Fast 1200mV 0C Model Setup 'Clock:OBJ1|delay[25]'
+Slack : -101.755
+TNS   : -1270.682
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.642
+TNS   : -4.526
+
+Type  : Fast 1200mV 0C Model Hold 'Clock:OBJ1|delay[25]'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.245
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'Clock:OBJ1|delay[25]'
+Slack : -1.747
+TNS   : -68.040
+
+Type  : Fast 1200mV 0C Model Removal 'Clock:OBJ1|delay[25]'
+Slack : 0.606
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -37.075
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock:OBJ1|delay[25]'
+Slack : -1.000
+TNS   : -80.000
+
+------------------------------------------------------------
