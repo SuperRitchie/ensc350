@@ -1,0 +1,256 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+Edigit7seg
+Z0 w1707947814
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/nma66/Downloads/Lab2 (1)/Lab2
+Z5 8C:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg.vhd
+Z6 FC:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg.vhd
+l0
+L19
+V:1J=oIb^42zzYkb5cESnT0
+!s100 ezEU0L[NJQJW]N[B^0COl0
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1708044468
+!i10b 1
+Z9 !s108 1708044468.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg.vhd|
+Z11 !s107 C:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+DEx4 work 9 digit7seg 0 22 :1J=oIb^42zzYkb5cESnT0
+l28
+L27
+VNM?YK?LD6c]JLBk^WMGYT1
+!s100 I>emSZBZneg89=3M:jX=63
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edigit7seg_tb
+Z14 w1707960178
+R1
+R2
+R3
+R4
+Z15 8C:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg_tb.vhd
+Z16 FC:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg_tb.vhd
+l0
+L8
+VUHjEU7J>k>;W[3f=iih^E3
+!s100 XgIJN2Fi?@4]37lMGCiWL1
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg_tb.vhd|
+Z18 !s107 C:/Users/nma66/Downloads/Lab2 (1)/Lab2/digit7seg_tb.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R1
+R2
+R3
+DEx4 work 12 digit7seg_tb 0 22 UHjEU7J>k>;W[3f=iih^E3
+l51
+L11
+VcWf63a29X7;X12gI1;mLS1
+!s100 9jLDM5iJNEKL1AhKm:QEl3
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Enew_balance
+Z19 w1707342498
+R1
+R2
+R3
+R4
+Z20 8C:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance.vhd
+Z21 FC:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance.vhd
+l0
+L17
+VOT`][zdW<E69F2LVhIB6I3
+!s100 PT09fCBPW;@<zEUE2?ULS1
+R7
+32
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance.vhd|
+Z23 !s107 C:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance.vhd|
+!i113 1
+R12
+R13
+Abehavioural
+R1
+R2
+R3
+DEx4 work 11 new_balance 0 22 OT`][zdW<E69F2LVhIB6I3
+l31
+L30
+V7BAHCUCoz0?TM7gcRokhW0
+!s100 L5Yb_B3HZZ1Z?1OLgHHWF2
+R7
+32
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Enew_balance_tb
+Z24 w1707265960
+R1
+R2
+R3
+R4
+Z25 8C:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance_tb.vhd
+Z26 FC:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance_tb.vhd
+l0
+L19
+VhE^g;@JUhU=QnYQ:QcoMj3
+!s100 1oW8IfhAhPnAEXhCg7Z9S2
+R7
+32
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance_tb.vhd|
+Z28 !s107 C:/Users/nma66/Downloads/Lab2 (1)/Lab2/new_balance_tb.vhd|
+!i113 1
+R12
+R13
+Abehavioural
+R1
+R2
+R3
+DEx4 work 14 new_balance_tb 0 22 hE^g;@JUhU=QnYQ:QcoMj3
+l90
+L25
+V9zfIA=?:X6DWQJSiIE0Wj3
+!s100 Ng6[Sda=7A;N6:kd]kEaS3
+R7
+32
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13
+Ewin
+Z29 w1707342562
+R1
+R2
+R3
+R4
+Z30 8C:/Users/nma66/Downloads/Lab2 (1)/Lab2/win.vhd
+Z31 FC:/Users/nma66/Downloads/Lab2 (1)/Lab2/win.vhd
+l0
+L19
+Vnb3hXRJWJGfHjFYKc`7QP3
+!s100 8V9gjRdQ:9;2aIk?nNX2H3
+R7
+32
+R8
+!i10b 1
+R9
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/Lab2 (1)/Lab2/win.vhd|
+Z33 !s107 C:/Users/nma66/Downloads/Lab2 (1)/Lab2/win.vhd|
+!i113 1
+R12
+R13
+Abehavioural
+R1
+R2
+R3
+DEx4 work 3 win 0 22 nb3hXRJWJGfHjFYKc`7QP3
+l38
+L30
+VZ^69HRm3114EKh[fNbLWz1
+!s100 _X6CMBji==Jb68Ie^z_6W3
+R7
+32
+R8
+!i10b 1
+R9
+R32
+R33
+!i113 1
+R12
+R13
+Ewin_tb
+Z34 w1707226370
+R1
+R2
+R3
+R4
+Z35 8C:/Users/nma66/Downloads/Lab2 (1)/Lab2/win_tb.vhd
+Z36 FC:/Users/nma66/Downloads/Lab2 (1)/Lab2/win_tb.vhd
+l0
+L19
+Vh9l?:cYhX_;4I8`?>jLN<2
+!s100 ?bW4;<cNB[6C?mK[I5j;o3
+R7
+32
+R8
+!i10b 1
+R9
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/Lab2 (1)/Lab2/win_tb.vhd|
+Z38 !s107 C:/Users/nma66/Downloads/Lab2 (1)/Lab2/win_tb.vhd|
+!i113 1
+R12
+R13
+Abehavioural
+R1
+R2
+R3
+DEx4 work 6 win_tb 0 22 h9l?:cYhX_;4I8`?>jLN<2
+l87
+L25
+VD79nDTeVlUK_CCi<zezEa0
+!s100 Doh53H:gU_Z;446LVP8n[3
+R7
+32
+R8
+!i10b 1
+R9
+R37
+R38
+!i113 1
+R12
+R13

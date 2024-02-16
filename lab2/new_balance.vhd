@@ -1,0 +1,70 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+ 
+LIBRARY WORK;
+USE WORK.ALL;
+
+--------------------------------------------------------------
+--
+-- Skeleton file for new_balance subblock.  This block is purely
+-- combinational and calculates the
+-- new balance after adding winning bets and subtracting losing bets.
+--
+---------------------------------------------------------------
+
+
+ENTITY new_balance IS
+  PORT(money : in unsigned(11 downto 0);  -- Current balance before this spin
+       value1 : in unsigned(2 downto 0);  -- Value of bet 1
+       value2 : in unsigned(2 downto 0);  -- Value of bet 2
+       value3 : in unsigned(2 downto 0);  -- Value of bet 3
+       bet1_wins : in std_logic;  -- True if bet 1 is a winner
+       bet2_wins : in std_logic;  -- True if bet 2 is a winner
+       bet3_wins : in std_logic;  -- True if bet 3 is a winner
+       new_money : out unsigned(11 downto 0));  -- balance after adding winning
+                                                -- bets and subtracting losing bets
+END new_balance;
+
+
+ARCHITECTURE behavioural OF new_balance IS
+BEGIN
+	process(money, bet1_wins, bet2_wins, bet3_wins, value1, value2, value3)
+		variable currBalance : unsigned(11 downto 0);
+	begin
+		currBalance := money;
+		if (bet1_wins= '1') then	-- calc bet1 money
+			currBalance := currBalance + (to_unsigned(35,currBalance'length-value1'length) * value1); -- 35:1
+		else 
+			if (currBalance < value1) then
+				currBalance := (others => '0');
+			else
+				currBalance := currBalance - value1; 
+			end if;
+		end if; 
+
+	
+		if (bet2_wins= '1') then	-- calculate bet2 money
+			currBalance := currBalance + value2;
+		else 
+			if (currBalance < value2) then
+				currBalance := (others => '0');
+			else
+				currBalance := currBalance - value2; 
+			end if; 
+		end if; 
+
+	
+		if (bet3_wins= '1') then	-- Calc bet3 money
+			currBalance := currBalance + to_unsigned(2,currBalance'length - value3'length) * value3;
+		else 
+			if (currBalance < value3) then
+				currBalance := (others => '0');
+			else
+				currBalance := currBalance - value3; 
+			end if; 
+		end if; 
+
+		new_money <= currBalance;
+	end process;
+END;

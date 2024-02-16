@@ -1,0 +1,37 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity register3Bit is
+  generic (numBits : positive);
+  port (
+    clk : in std_logic;
+    d : in unsigned(numBits downto 0);
+	 rst: in std_logic;
+    q : in unsigned(numBits downto 0);
+  );
+end register3Bit; 
+
+architecture logic of debouncer is
+
+begin
+
+  -- Copy internal signal to output
+  switch_debounced <= debounced;
+
+  DEBOUNCE_PROC : process(clk)
+  begin
+    if rising_edge(clk) then
+	  
+	  if counter < timeout_cycles - 1 then
+		 counter <= counter + 1;
+	  elsif switch /= debounced then
+		 counter <= 0;
+		 debounced <= switch;
+	  end if;
+
+      
+    end if;
+  end process;
+
+end architecture;
