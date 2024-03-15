@@ -1,0 +1,7 @@
+
+State Machine - |lab3|moo:mooo|state
+Name state.horizontalLine state.verticalLine state.start state.idle 
+state.idle 0 0 0 0 
+state.start 0 0 1 1 
+state.verticalLine 0 1 0 1 
+state.horizontalLine 1 0 0 1 

@@ -1,0 +1,9 @@
+
+State Machine - |lab3Reference|draw:program|state
+Name state.reset state.pointState state.horizontalLine state.verticalLine state.start state.idle 
+state.idle 0 0 0 0 0 0 
+state.start 0 0 0 0 1 1 
+state.verticalLine 0 0 0 1 0 1 
+state.horizontalLine 0 0 1 0 0 1 
+state.pointState 0 1 0 0 0 1 
+state.reset 1 0 0 0 0 1 

@@ -1,0 +1,99 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity triangle is
+  port (
+    clk : in std_logic;	-- clock 50
+	 pointX : in std_logic_vector(7 downto 0);
+	 pointY : in std_logic_vector(6 downto 0);
+	 startTriangle : in std_logic; -- release this with a register to trigger a start
+	 x : out std_logic_vector(7 downto 0);
+	 y : out std_logic_vector(6 downto 0);
+    draw : out std_logic
+	 --finished : out std_logic
+  );
+end triangle; 
+
+architecture logic of triangle is
+	component lineDraw is 
+	  port (
+    clk : in std_logic;	-- clock 50
+	 startX : in std_logic_vector(8 downto 0);
+	 startY : in std_logic_vector(8 downto 0);
+	 endX : in std_logic_vector(8 downto 0);
+	 endY : in std_logic_vector(8 downto 0);
+	 startDrawing : in std_logic; -- release this with a register to trigger a start
+    --color : in std_logic_vector(2 downto 0);
+	 --color : out std_logic_vector(2 downto 0);
+	 x : out std_logic_vector(7 downto 0);
+	 y : out std_logic_vector(6 downto 0);
+    draw : out std_logic;
+	 finished : out std_logic
+  );
+  end component;
+  
+	type stateType is (idle, drawFirst, drawSecond, drawThird);
+	signal state : stateType;
+	signal centerX : std_logic_vector(7 downto 0) := "01010000";
+   signal centerY : std_logic_vector(6 downto 0) := "0111100";
+	signal thirdX : std_logic_vector(8 downto 0);
+   signal thirdY : std_logic_vector(8 downto 0); 
+	signal startDraw : std_logic_vector;
+	signal inX1 : std_logic_vector(7 downto 0);
+	signal inY1 : std_logic_vector(6 downto 0);
+	signal inX2 : std_logic_vector(7 downto 0);
+	signal inY2 : std_logic_vector(6 downto 0);
+	signal xOut : std_logic_vector(7 downto 0);
+	signal yOut : std_logic_vector(6 downto 0);
+	signal plot, finishSig : std_logic_vector;
+begin
+
+process(clk)
+begin 		
+	if rising_edge(clk) then
+		case state is 
+			when idle => 
+				if (startTriangle = '0') then
+					state <= drawFirst;
+					startDraw <= '0';
+				else
+					startDraw <= '1';
+				end if;	
+				inX1 <= centerX;
+				inY1 <= centerY;
+				inX2 <= pointX;
+				inY2 <= pointY;
+			when drawFirst => 
+				if (finishSig = '1') then
+					state <= drawSecond;
+					inX1 <= centerX;
+					inY1 <= centerY;
+					inX2 <= pointX;
+					inY2 <= centerY;
+				end if;
+
+			when drawSecond => 
+				if (finishSig = '1') then
+					state <= drawThird;
+					inX1 <= pointX;
+					inY1 <= centerY;
+					inX2 <= pointX;
+					inY2 <= pointY;
+				end if;
+			when drawThird => 
+				if (finishSig = '1') then
+					state <= idle;
+				end if;
+
+		end case;
+		x <= xOut;
+		y <= yOut;
+		draw <= plot;
+	end if;
+	
+end process;
+
+draw: lineDraw port map (clk => CLOCK_50, startX(7 downto 0) => inX1, startY(6 downto 0) => inY1, endX(7 downto 0) => inX2, endY(6 downto 0) => inY2, startDrawing => startDraw, x => xOut, y => yOut, draw => plot, finished => finishSig);
+
+end architecture;
