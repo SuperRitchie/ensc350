@@ -1,0 +1,9 @@
+
+State Machine - |UART|txd:transmit|currState
+Name currState.finished currState.parity currState.transmit currState.startTransmit currState.handshake currState.idle 
+currState.idle 0 0 0 0 0 0 
+currState.handshake 0 0 0 0 1 1 
+currState.startTransmit 0 0 0 1 0 1 
+currState.transmit 0 0 1 0 0 1 
+currState.parity 0 1 0 0 0 1 
+currState.finished 1 0 0 0 0 1 

@@ -1,0 +1,169 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity rxd is
+	generic(baudRate : integer := 5208);
+	port(clk : in std_logic;
+		  rst : in std_logic;
+		  data : out std_logic_vector(7 downto 0);
+		  uart_cts : in std_logic;
+		  uart_rxd : in std_logic;
+		  uart_rts : out std_logic;
+		  led : out std_logic_vector(7 downto 0));
+end rxd;
+
+architecture logic of rxd is
+	type stateType is (idle, handshake, startReceive, receive, parity, finished, waitHalf);
+	signal currState : stateType;
+	
+	begin
+	process(clk, rst)
+	variable baudGenMax : integer := baudRate - 1;
+	variable baudCounter : integer := 0;
+	variable parityBit : std_logic;
+	variable index : integer := 0;
+	variable pressed : std_logic := '0';
+	variable temp : std_logic_vector(7 downto 0);
+	variable err1, err2 : std_logic := '0';
+
+	begin
+		data <= temp;
+
+		if (rst = '0') then
+			baudCounter := 0;
+			index := 0;
+			currState <= idle;
+			pressed := '0';
+			led <= "11111111";
+		elsif (rising_edge(clk)) then
+			
+			case currState is
+				when idle => 
+					data <= temp;
+
+					--data <= "00000000";
+					
+					
+					
+					uart_rts <= '0';
+					
+					if uart_cts = '1' then
+						uart_rts <= '1';	
+						currState <= handshake;
+					end if;
+					
+					
+					
+					led <= "00000001";
+--					if (uart_rxd = '0') then
+--						baudCounter := baudRate / 2;
+--						
+--						currState <= waitHalf;
+--					end if;
+				when waitHalf =>
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						baudCounter := 0;
+						currState <= receive;
+					end if;
+				when handshake =>
+--					if uart_cts = '1' then
+--						currState <= startReceive;
+--					end if;
+--					led <= "00000010";
+--					--currState <= startTransmit;
+--					if (baudCounter < baudGenMax) then
+--						baudCounter := baudCounter + 1;
+--					else
+--						baudCounter := 0;
+--						currState <= receive;
+--					end if;
+					
+					
+					
+					if (uart_rxd = '0') then
+						baudCounter := baudRate / 2;
+						
+						currState <= waitHalf;
+					end if;
+				when startReceive =>
+					led <= "00000100";
+					--data <= "00000000";
+--					if (uart_rxd = '0') then
+--						baudCounter := baudRate / 2;
+--						
+--						currState <= waitHalf;
+--					end if;
+--					uart_txd <= '0';
+--					if (baudCounter < baudGenMax) then
+--						baudCounter := baudCounter + 1;
+--					else
+--						baudCounter := 0;
+--						currState <= transmit;
+--						
+--					end if;
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						baudCounter := 0;
+						currState <= waitHalf;
+					end if;
+					
+				when receive =>
+					led <= "00001000";
+					temp(index) := uart_rxd;
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						index := index + 1;
+						baudCounter := 0;
+						if (index = 8) then
+							currState <= parity;
+							index := 0;
+						end if;
+					end if;
+				when parity =>
+					led <= "00010000";	
+					parityBit := (temp(7) xor (temp(6) xor (temp(5) xor (temp(4) xor (temp(3) xor (temp(2) xor (temp(1) xor temp(0))))))));
+					if parityBit /= uart_rxd then
+						err1 := '1';
+					else
+						err1 := '0';
+					end if;
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						baudCounter := 0;
+						currState <= finished;
+					end if;
+				when finished =>
+					led <= "00100000";
+					if (uart_rxd /= '1') then
+						err2 := '1';
+					else
+						err2 := '0';
+					end if;
+					
+					if (err1 = '1') then
+						temp := "10101010";
+--					else
+--						data <= temp;
+					end if;
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						baudCounter := 0;
+						currState <= idle;
+						err1 := '0';
+						err2 := '0';
+					end if;
+				when others => 
+					led <= "11110000";
+					currState <= idle;
+			end case;
+		end if;
+	end process;
+end architecture;	
+		  

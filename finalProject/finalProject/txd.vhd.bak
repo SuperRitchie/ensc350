@@ -1,0 +1,94 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity txd is
+	generic(baudRate : integer := 5208);
+	port(clk : in std_logic;
+		  rst : in std_logic;
+		  key : in std_logic;
+		  data : in std_logic_vector(7 downto 0);
+		  uart_cts : in std_logic;
+		  uart_txd : out std_logic;
+		  uart_rts : out std_logic);
+end txd;
+
+architecture logic of txd is
+	type stateType is (idle, handshake, startTransmit, transmit, parity, finished);
+	signal currState : stateType;
+	
+	--signal out : std_logic := '1';
+	variable baudGenMax : integer := baudRate - 1;
+	variable baudCounter : integer := 0;
+	variable parity : std_logic;
+	variable index : integer := 0;
+	
+	
+	process(clk)
+	begin
+		if (rst = '0') then
+			baudCounter := 0;
+		elsif (rising_edge(clk)) then
+			
+			case currState is
+				when idle => 
+					uart_txd <= '1';
+					uart_rts <= '0';
+					
+					if key(0) = '0' then
+						uart_rts <= '1';	--initiate handshake
+						--uart_txd <= '0';
+						currState <= handshake;
+						
+					end if;
+				when handshake =>
+					uart_txd <= '1';
+					if (uart_cts = '1') then
+						currState <= startTransmit;
+						uart_rts <= '0';
+					end if;
+				when startTransmit => 
+					uart_txd => '0'
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						baudCounter := 0;
+						currState <= transmit;
+						
+						parity := data(7) xor data(6) xor data(5) xor data(4) xor data(3) xor data(2) xor data(1) xor data(0);
+					end if;
+				when transmit =>
+					uart_txd <= data(index);
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						index := index + 1;
+						baudCounter := 0
+						if (index = 8) then
+							currState <= parity;
+							index := 0;
+						end if;
+					end if;
+				when parity => 
+					uart_txd <= parity;
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						baudCounter := 0;
+						currState <= finished;
+					end if;
+				when finished => 
+					uart_txd <= '1'; --finished transmit
+					if (baudCounter < baudGenMax) then
+						baudCounter := baudCounter + 1;
+					else
+						baudCounter := 0;
+						currState <= idle;
+					end if;
+				when others => 
+					currState <= idle;
+			end case;
+		end if;
+	end process;
+	
+		  

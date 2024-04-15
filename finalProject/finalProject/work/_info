@@ -1,0 +1,174 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dU:/ENSC350/Lab3
+Erx_tb
+Z0 w1712358479
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dU:/ENSC350/finalProject
+Z5 8U:/ENSC350/finalProject/rx_tb.vhd
+Z6 FU:/ENSC350/finalProject/rx_tb.vhd
+l0
+L16
+VmTDO8SYUCejVe8bFYc[SX2
+!s100 F;f[FhK1JiYOeRb4>6N0k2
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1712358599
+!i10b 1
+Z9 !s108 1712358599.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/ENSC350/finalProject/rx_tb.vhd|
+Z11 !s107 U:/ENSC350/finalProject/rx_tb.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Asim
+R1
+R2
+R3
+DEx4 work 5 rx_tb 0 22 mTDO8SYUCejVe8bFYc[SX2
+l46
+L20
+V8XVh1B[WDSeUF_Xa`BOCA3
+!s100 mNe7;21ND9^m2cPEQ`0@K2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Erxd
+Z14 w1712358563
+R1
+R2
+R3
+R4
+Z15 8U:/ENSC350/finalProject/rxd.vhd
+Z16 FU:/ENSC350/finalProject/rxd.vhd
+l0
+L5
+VkKTV8I3G4_[D79ZTTdU?12
+!s100 FLEG2M[J:1XdGjVJ9FaD[1
+R7
+32
+Z17 !s110 1712358600
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/ENSC350/finalProject/rxd.vhd|
+Z19 !s107 U:/ENSC350/finalProject/rxd.vhd|
+!i113 1
+R12
+R13
+Alogic
+R1
+R2
+R3
+DEx4 work 3 rxd 0 22 kKTV8I3G4_[D79ZTTdU?12
+l20
+L16
+V^d2JJ=In^P;1ohTUn>ZNW3
+!s100 j_2]:kC3f?_]b4HhXna;@3
+R7
+32
+R17
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
+Etx_tb
+Z20 w1712966014
+R1
+R2
+R3
+Z21 dC:/Users/nma66/Downloads/finalProject (3)/finalProject
+Z22 8C:/Users/nma66/Downloads/finalProject (3)/finalProject/tx_tb.vhd
+Z23 FC:/Users/nma66/Downloads/finalProject (3)/finalProject/tx_tb.vhd
+l0
+L6
+VfKalo0;6i_0A[EK>dK]4A3
+!s100 cMjkV_?_1CVV=f301XLnN3
+R7
+32
+Z24 !s110 1712966023
+!i10b 1
+Z25 !s108 1712966022.000000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/finalProject (3)/finalProject/tx_tb.vhd|
+Z27 !s107 C:/Users/nma66/Downloads/finalProject (3)/finalProject/tx_tb.vhd|
+!i113 1
+R12
+R13
+Asim
+R1
+R2
+R3
+Z28 DEx4 work 5 tx_tb 0 22 fKalo0;6i_0A[EK>dK]4A3
+l32
+L9
+VWc`k]^0Go6cKEA1Vd7U_R0
+!s100 Hh71>B3kXGHdlXVRk]nQk3
+R7
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R12
+R13
+Etxd
+Z29 w1712963714
+R1
+R2
+R3
+R21
+Z30 8C:/Users/nma66/Downloads/finalProject (3)/finalProject/txd.vhd
+Z31 FC:/Users/nma66/Downloads/finalProject (3)/finalProject/txd.vhd
+l0
+L5
+V>g^M8cLVfH6goWhNdB7261
+!s100 8o^QHOj5BVE_4^P`nYc@]3
+R7
+32
+Z32 !s110 1712966022
+!i10b 1
+R25
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/nma66/Downloads/finalProject (3)/finalProject/txd.vhd|
+Z34 !s107 C:/Users/nma66/Downloads/finalProject (3)/finalProject/txd.vhd|
+!i113 1
+R12
+R13
+Alogic
+R1
+R2
+R3
+DEx4 work 3 txd 0 22 >g^M8cLVfH6goWhNdB7261
+l21
+L17
+V5eG906nk4YViXM7Wim9=23
+!s100 k;^1a9hAM7b?Kc7Gn2Sik2
+R7
+32
+R32
+!i10b 1
+R25
+R33
+R34
+!i113 1
+R12
+R13

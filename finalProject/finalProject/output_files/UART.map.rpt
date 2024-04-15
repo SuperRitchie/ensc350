@@ -1,0 +1,414 @@
+Analysis & Synthesis report for UART
+Fri Apr 12 17:03:01 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |UART|txd:transmit|currState
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: debounce:u
+ 13. Parameter Settings for User Entity Instance: txd:transmit
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Apr 12 17:03:01 2024       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; UART                                        ;
+; Top-level Entity Name              ; UART                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 138                                         ;
+;     Total combinational functions  ; 135                                         ;
+;     Dedicated logic registers      ; 89                                          ;
+; Total registers                    ; 89                                          ;
+; Total pins                         ; 53                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; UART               ; UART               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; debounce.vhd                     ; yes             ; User VHDL File  ; C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/debounce.vhd ;         ;
+; txd.vhd                          ; yes             ; User VHDL File  ; C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/txd.vhd      ;         ;
+; UART.vhd                         ; yes             ; User VHDL File  ; C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd     ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 138            ;
+;                                             ;                ;
+; Total combinational functions               ; 135            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 42             ;
+;     -- 3 input functions                    ; 12             ;
+;     -- <=2 input functions                  ; 81             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 68             ;
+;     -- arithmetic mode                      ; 67             ;
+;                                             ;                ;
+; Total registers                             ; 89             ;
+;     -- Dedicated logic registers            ; 89             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 53             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 89             ;
+; Total fan-out                               ; 773            ;
+; Average fan-out                             ; 2.34           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |UART                      ; 135 (0)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |UART               ; UART        ; work         ;
+;    |debounce:u|            ; 16 (16)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART|debounce:u    ; debounce    ; work         ;
+;    |txd:transmit|          ; 119 (119)           ; 82 (82)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART|txd:transmit  ; txd         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |UART|txd:transmit|currState                                                                                                          ;
++-------------------------+--------------------+------------------+--------------------+-------------------------+---------------------+----------------+
+; Name                    ; currState.finished ; currState.parity ; currState.transmit ; currState.startTransmit ; currState.handshake ; currState.idle ;
++-------------------------+--------------------+------------------+--------------------+-------------------------+---------------------+----------------+
+; currState.idle          ; 0                  ; 0                ; 0                  ; 0                       ; 0                   ; 0              ;
+; currState.handshake     ; 0                  ; 0                ; 0                  ; 0                       ; 1                   ; 1              ;
+; currState.startTransmit ; 0                  ; 0                ; 0                  ; 1                       ; 0                   ; 1              ;
+; currState.transmit      ; 0                  ; 0                ; 1                  ; 0                       ; 0                   ; 1              ;
+; currState.parity        ; 0                  ; 1                ; 0                  ; 0                       ; 0                   ; 1              ;
+; currState.finished      ; 1                  ; 0                ; 0                  ; 0                       ; 0                   ; 1              ;
++-------------------------+--------------------+------------------+--------------------+-------------------------+---------------------+----------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 89    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 79    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 65    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; txd:transmit|led[0]                    ; 1       ;
+; txd:transmit|led[1]                    ; 1       ;
+; txd:transmit|led[2]                    ; 1       ;
+; txd:transmit|led[3]                    ; 1       ;
+; txd:transmit|led[4]                    ; 1       ;
+; txd:transmit|led[5]                    ; 1       ;
+; txd:transmit|led[6]                    ; 1       ;
+; txd:transmit|led[7]                    ; 1       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |UART|debounce:u|counter[4]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |UART|txd:transmit|baudCounter[29] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; No         ; |UART|txd:transmit|Selector2       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; timeout_cycles ; 50    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: txd:transmit ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; baudrate       ; 5208  ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 53                          ;
+; cycloneiii_ff         ; 89                          ;
+;     CLR               ; 15                          ;
+;     ENA               ; 1                           ;
+;     ENA CLR           ; 32                          ;
+;     ENA CLR SCLR      ; 32                          ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 144                         ;
+;     arith             ; 67                          ;
+;         2 data inputs ; 67                          ;
+;     normal            ; 77                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 42                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.50                       ;
+; Average LUT depth     ; 5.44                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Apr 12 17:02:53 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off finalProject -c UART
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
+    Info (12022): Found design unit 1: debounce-logic File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/debounce.vhd Line: 16
+    Info (12023): Found entity 1: debounce File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/debounce.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file tx_tb.vhd
+    Info (12022): Found design unit 1: tx_tb-sim File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/tx_tb.vhd Line: 9
+    Info (12023): Found entity 1: tx_tb File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/tx_tb.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file txd.vhd
+    Info (12022): Found design unit 1: txd-logic File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/txd.vhd Line: 17
+    Info (12023): Found entity 1: txd File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/txd.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
+    Info (12022): Found design unit 1: UART-logic File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 17
+    Info (12023): Found entity 1: UART File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 5
+Info (12127): Elaborating entity "UART" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at UART.vhd(10): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:u" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 53
+Info (12128): Elaborating entity "txd" for hierarchy "txd:transmit" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 54
+Warning (10542): VHDL Variable Declaration warning at txd.vhd(23): used initial value expression for variable "baudGenMax" because variable was never assigned a value File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/txd.vhd Line: 23
+Info (13000): Registers with preset signals will power-up high File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/txd.vhd Line: 30
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 13 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 7
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 8
+    Warning (15610): No output dependent on input pin "UART_RXD" File: C:/Users/nma66/Downloads/finalProject (3)/finalProject - Copy/UART.vhd Line: 11
+Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 25 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 169 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Fri Apr 12 17:03:01 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
+
+
